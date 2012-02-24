@@ -1,0 +1,189 @@
+/**
+  * Author: Alonso Vidales <alonso.vidales@tras2.es>
+  * Date: 2012-02-13
+  */
+
+html, body {
+	background: #000000;
+}
+
+#main_canvas {
+	width: 600px;
+	height: 550px;
+}
+
+/**
+  * Monster styles from here
+  */
+.monster {
+	background-image: url('../img/enemies_96x64.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	z-index: 100;
+}
+
+.monster.killed {
+	background-image: url('../img/invaderkilled.png');
+	background-position: 0px 0px !important;
+}
+
+.monster.fat {
+	background-position: 0px 0px;
+}
+
+.monster.fat.animation {
+	background-position: 0px -32px;
+}
+
+.monster.slim {
+	background-position: -32px 0px;
+}
+
+.monster.slim.animation {
+	background-position: -32px -32px;
+}
+
+.monster.squid {
+	background-position: -64px 0px;
+}
+
+.monster.squid.animation {
+	background-position: -64px -32px;
+}
+
+/**
+  * MisteryShip styles from here
+  */
+.mistery_ship {
+	background-image: url('../img/mistery_ship.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 60px;
+	height: 37px;
+}
+
+.mistery_ship_points {
+	position: absolute;
+	width: 60px;
+	text-align: center;
+	font-family: Arial;
+	color: #ff0000;
+	font-size: 18px;
+}
+
+/**
+  * Ship styles from here
+  */
+.ship {
+	background-image: url('../img/ship.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 46px;
+	height: 26px;
+}
+
+.ship.destroy {
+	background-image: url('../img/explosion.png');
+}
+
+/**
+  * Bomb styles from here
+  */
+.bomb {
+	position: absolute;
+	width: 2px;
+	height: 15px;
+	background-color: #ebebeb;
+}
+
+/**
+  * Missile styles from here
+  */
+.missile {
+	position: absolute;
+	width: 2px;
+	height: 15px;
+	background-color: #77f215;
+}
+
+/**
+  * Other elements styles from here
+  */
+.bottom_line {
+	position: absolute;
+	background-color: #38710d;
+	width: 595px;
+	height: 1px;
+	top: 518px;
+	left: 10px;
+}
+
+.scoreboard {
+	font-family: Arial;
+	position: absolute;
+	color: #ebebeb;
+	font-size: 20px;
+}
+
+/**
+  * Game over styles from here
+  */
+.game_over {
+	position: relative;
+	margin: 4px;
+	color: #77f215;
+	text-align: center;
+}
+
+.game_over.window {
+	border-color: #77f215;
+	border-width: 4px;
+	border-style: solid; 
+	top: 60px;
+	left: 90px;
+	width: 400px;
+	height: 390px;
+}
+
+.game_over.text {
+	top: 40px;
+	font-size: 40px;
+}
+
+.game_over.image {
+	top: 60px;
+	left: 155px;
+	display: block;
+	width: 90px;
+}
+
+.game_over.score {
+	top: 90px;
+	font-size: 20px;
+}
+
+.game_over.link_to_cv, game_over_window.link_to_cv:visited {
+	top: 100px;
+	text-decoration: none;
+	font-size: 19px;
+}
+
+.shield {
+	background-image: url('../img/shield.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 66px;
+	height: 48px;
+	z-index: 25;
+}
+
+.detroyed {
+	position: absolute;
+	background-image: url('../img/shield_destroyed_area.png');
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 20px;
+	z-index: 50;
+}
