@@ -102,13 +102,29 @@ var Shield = (function(config, inShieldPos) {
 				(inArea.topLeftY > area.topLeftY) &&
 				(inArea.topLeftY < area.bottRightY));
 
-			// If we have an inpact, check if was a damaged area
-			$.each(hurts, function(inKey, inHurt) {
-				
-			});
-
 			if (issetCrash) {
-				addDestroyedArea(inArea);
+				// If we have an inpact, check if was a damaged area
+				$.each(hurts, function(inKey, inHurt) {
+					if (
+						(inHurt.topLeftX < inArea.topLeftX) &&
+						(inHurt.bottRightX > inArea.bottRightX) &&
+						(
+							(
+								(inHurt.topLeftY > inArea.bottRightY) &&
+								(inHurt.bottRightY < inArea.bottRightY)
+							) || (
+								(inHurt.topLeftY < inArea.topLeftY) &&
+								(inHurt.bottRightY > inArea.topLeftY)))) {
+
+						issetCrash = false;
+
+						return false;
+					}
+				});
+
+				if (issetCrash) {
+					addDestroyedArea(inArea);
+				}
 			}
 
 			return issetCrash;

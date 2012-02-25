@@ -44,13 +44,13 @@ var Missile = (function(config, inShields, inMonsters, inX, inY) {
 	};
 
 	/**
-	  * Check if the bomb area are in the area of the player space ship
+	  * Check if the missile area are in the area of the player space ship
 	  *
 	  * @see Shield.checkCrash method
 	  * @see Monster.checkCrash method
 	  * @see Monster.die method
 	  *
-	  * @return <bool> : true if the bomb and space ship area crases, false of not
+	  * @return <bool> : true if the missile and space ship area crases, false of not
 	  */
 	var checkCrash = function() {
 		// Will be used to know if the missile kill any monster
