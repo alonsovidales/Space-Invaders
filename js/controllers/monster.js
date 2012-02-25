@@ -160,7 +160,7 @@ var Monster = (function(config, inType, inInitialStatus, inXposition, inYpositio
 		},
 
 		/**
-		  * This method will be called then the monster should die, executes a sound and kill the monster
+		  * This method will be called when then the monster should die, executes a sound and kill the monster
 		  */
 		die: function() {
 			// Execute the die sound
@@ -174,7 +174,7 @@ var Monster = (function(config, inType, inInitialStatus, inXposition, inYpositio
 		/**
 		  * This method should be called for the missiles to know if exists an impact with the monster
 		  *
-		  * @param inArea <object> : The area of the element that can impact with the monster
+		  * @param inArea <object> : The area of the element that can impact against the monster
 		  *
 		  * @return <bool> : true if the impact success, false if not, or false if the monster is die
 		  */
