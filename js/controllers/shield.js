@@ -7,21 +7,9 @@
   * @see config.monster
   *
   * @param config <object>: The global config object
-  * @param inType <strign>: The type of the monster, will be used for the
-  * 			    punctuation and CSS class
-  * @param inInitialStatus <bool>: The initial CSS status of the monster
-  *				   is used to render the first status of the
-  *				   monster.
-  * @param inXposition <int>: The initial position in columns inside the monsters
-  *			      matrix the width and heigth of each cell are defined by
-  *			      config.monster.advanceTopLeftPx
-  * @param inYposition <int>: The initial position in rows inside the monsters
-  *			      matrix the width and heigth of each cell are defined by
-  *			      config.monster.advanceTopLeftPx
-  * @param inCallWhenDie <function>: The function to call when the monster is die
-  * @param inSpaceShip <SpaceShip object>: The player space ship object
-  * @param inCallGameOver <function>: The function to call when the monster produced
-  *				      a end of game over
+  * @param inShieldPos <int>: The Shield relative position acording to the parameters on the config file
+  *			@see config.shield.xSep
+  *			@see config.shield.width
   *
   */
 var Shield = (function(config, inShieldPos) {
@@ -58,15 +46,17 @@ var Shield = (function(config, inShieldPos) {
 
 	var addDestroyedArea = function(inArea) {
 		var destroyedDiv = $('<div>').addClass('detroyed');
+		var topLeftX = Math.round(inArea.topLeftX - (config.shield.destroyedWidthHeight / 2));
+		var topLeftY = Math.round(inArea.topLeftY - (config.shield.destroyedWidthHeight / 2));
 
-		destroyedDiv.css('top', inArea.topLeftY - 5).css('left', inArea.topLeftX - 5);
+		destroyedDiv.css('top', topLeftY).css('left', topLeftX);
 		$(config.mainCanvas).append(destroyedDiv);
 
 		hurts.push({
-			'topLeftX': inArea.topLeftX - 5,
-			'topLeftY': inArea.topLeftY - 5,
-			'bottRightX': inArea.bottRightX + 5,
-			'bottRightY': inArea.bottRightY + 5
+			'topLeftX': topLeftX,
+			'topLeftY': topLeftY,
+			'bottRightX': topLeftX + config.shield.destroyedWidthHeight,
+			'bottRightY': topLeftY + config.shield.destroyedWidthHeight
 		});
 	};
 

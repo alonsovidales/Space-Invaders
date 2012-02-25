@@ -183,7 +183,7 @@ html, body {
 	position: absolute;
 	background-image: url('../img/shield_destroyed_area.png');
 	background-repeat: no-repeat;
-	width: 10px;
+	width: 20px;
 	height: 20px;
 	z-index: 50;
 }

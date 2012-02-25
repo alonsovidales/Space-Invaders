@@ -117,7 +117,9 @@ var config = {
 		// The width in pixels of the div element
 		width: 66,
 		// The height in pixels of the div element
-		height: 48
+		height: 48,
+		// The height and width on pixels of the destroyed areas on the shield
+		destroyedWidthHeight: 20
 	},
 	// This sounds will be played each monster movements
 	backgroundSounds: [
